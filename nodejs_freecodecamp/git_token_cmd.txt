@@ -1,4 +1,0 @@
-# replace the token after username: and before @
-git remote set-url node_tutorial https://adarsh096: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@github.com/Adarsh096/node_tutorials.git
-
-git push -u node_tutorial main
