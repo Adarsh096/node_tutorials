@@ -1,1 +1,5 @@
-Here is the result : hello this is the first text file for testing.,Hey, this is the second file.Here is the result : hello this is the first text file for testing.,Hey, this is the second file.
+This is the async await approach. contents are : hello this is the first text file for testing. and Hey, this is the second file.
+
+This is the async await approach. contents are : hello this is the first text file for testing. and Hey, this is the second file.
+
+This is the async await approach. contents are : hello this is the first text file for testing. and Hey, this is the second file.
