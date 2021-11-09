@@ -1,0 +1,58 @@
+https://stackoverflow.com/questions/13335873/how-can-i-check-whether-a-variable-is-defined-in-node-js
++++++++++++++
+
+Determine if property is existing (but is not a falsy value):
+
+if (typeof query !== 'undefined' && query !== null){
+   doStuff();
+}
+
+Usually using
+
+if (query){
+   doStuff();
+}
+
+is sufficient. Please note that:
+
+if (!query){
+   doStuff();
+}
+
+doStuff() will execute even if query was an existing variable with falsy value (0, false, undefined or null)
+
++++++++++++++
+
+
+--- typeof operator :
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+++++++++++++
+syntax :
+typeof operand
+typeof(operand)
+
+Type =>	Result
+Undefined =>	"undefined"
+Null =>	"object" (see below)
+Boolean =>	"boolean"
+Number =>	"number"
+BigInt (new in ECMAScript 2020) =>	"bigint"
+String =>	"string"
+Symbol (new in ECMAScript 2015) =>	"symbol"
+Function object (implements [[Call]] in ECMA-262 terms) =>	"function"
+Any other object =>	"object"
+++++++++++++
+
+
+----- javascript equality operators :
+https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons
+++++++++++++
+JavaScript has two sets of equality operators: === and !==, and their evil twins == and !=
+
+The lack of transitivity is alarming. My advice is to never use the evil twins. Instead, always use === and !==. All of the comparisons just shown produce false with the === operator.
+++++++++++++
+
+
+--------- node js http events doc :
+https://nodejs.org/dist/latest-v16.x/docs/api/http.html#class-httpserver
+
