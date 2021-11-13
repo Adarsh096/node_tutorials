@@ -1,1 +1,6 @@
 
+-- good reference for setting up the api:
+https://hn.algolia.com/api
+
+-- js rest or spread operator (...)
+https://oprearocks.medium.com/what-do-the-three-dots-mean-in-javascript-bc5749439c9a
