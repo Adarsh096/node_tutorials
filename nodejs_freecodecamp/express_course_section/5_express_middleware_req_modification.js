@@ -6,6 +6,9 @@ a criteria.
 
 // NOTE : we can not access req.params in the middlewares. refer (https://github.com/expressjs/express/issues/2088)
 
+//Test this file by making request to : http://localhost:5000/api/v1?id=2 and http://localhost:5000/api/v1?id=1
+
+
 const express = require('express');
 const app = express();
 
@@ -17,11 +20,12 @@ const authorize = function(req,res,next){
     
     // let {id} = req.params; // not valid for middleware.
     console.log(`in the middleware : ${req.params.id}`);// it will be undefined as it is not accessible.
-
-    // if(Number(id)>1){ // authorizing the access of data with id > 1
+    console.log(`in the middleware : ${req.query.id}`);// it will be having a value as it is accessible.
+    let {id} = req.query; // valid for middleware too
+    if(Number(id)>1){ // authorizing the access of data with id > 1
         console.log('adding auth token');
         req.mytoken = 'asl-456-t67-990';
-    // }
+    }
     console.log('calling the next()');
     next();
 }
@@ -34,8 +38,8 @@ app.get('/',(req,res)=>{
     res.send('hello there!');
 })
 
-app.get('/api/v1/:id',(req,res)=>{
-    console.log(req.params);
+app.get('/api/v1/',(req,res)=>{
+    console.log(req.params);// accessible in the router
     if(req.mytoken){
         return res.status(200).send('You have the access to the content');
     }
